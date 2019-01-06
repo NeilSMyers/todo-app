@@ -1,0 +1,42 @@
+.app-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.app {
+  margin-top: 2rem;
+  display: grid;
+  justify-items: center;
+  background-color: #777777;
+  border-radius: 10px;
+  width: 400px;
+}
+
+.add-todo {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 60%;
+}
+
+.add-todo input {
+  border-radius: 5px;
+  border: none;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  width: 80%;
+}
+
+input:checked {
+  background-color: black;
+}
+
+.done {
+  color: black;
+  text-decoration: line-through;
+}

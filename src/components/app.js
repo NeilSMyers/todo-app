@@ -9,13 +9,14 @@ export default class App extends Component {
     super(props) 
 
     this.state = {
-      todos: ["get bacon for breakfast", "build a todo list app cuz i'm cool", "Impress all my friends"]
+      todo: "",
+      addedTodo: [],
     }
   }
 
   renderTodos = () => {
-    return this.state.todos.map((item, index) => {
-      return <TodoItem title={this.state.todos[index]} key={index}/>
+    return this.state.addedTodo.map((item, index) => {
+      return <TodoItem title={this.state.todos[index]} key={index} state={this.state}/>
     })
   }
 
@@ -23,7 +24,7 @@ export default class App extends Component {
     return (
       <div className='app'>
         <h1>ToDo List</h1>
-        <AddTodo/>
+        <AddTodo state={this.state}/>
         {this.renderTodos()}
       </div>
     );

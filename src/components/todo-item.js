@@ -13,7 +13,7 @@ class TodoItem extends Component {
     return (
       <div className="todo-item">
         <input onClick={() => this.setState({ done: !this.state.done })} type="checkbox"/>
-        <p className={ this.state.done ? "done" : null }>{this.props.title}</p>
+        <p className={ this.state.done ? "done" : null }>{this.props.state.addedTodo}</p>
       </div>
     );
   }

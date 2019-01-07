@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import TodoItem from './todo-item';
-import AddTodo from './add-todo';
 
 
 export default class App extends Component {
@@ -9,14 +8,17 @@ export default class App extends Component {
     super(props) 
 
     this.state = {
-      todo: "",
-      addedTodo: [],
+      todos: []
     }
   }
 
+  addTodo = () => {
+    this.setState({ todos: [...this.state.todos, document.getElementById("add").value] })
+  }
+
   renderTodos = () => {
-    return this.state.addedTodo.map((item, index) => {
-      return <TodoItem title={this.state.todos[index]} key={index} state={this.state}/>
+    return this.state.todos.map((item, index) => {
+      return <TodoItem title={this.state.todos[index]} key={index}/>
     })
   }
 
@@ -24,7 +26,10 @@ export default class App extends Component {
     return (
       <div className='app'>
         <h1>ToDo List</h1>
-        <AddTodo state={this.state}/>
+        <div className="add-todo">
+          <input type="text" placeholder=" Add ToDo" id="add"/>
+          <button onClick={() => this.addTodo()}>Add</button>
+        </div>
         {this.renderTodos()}
       </div>
     );

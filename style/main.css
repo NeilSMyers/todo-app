@@ -12,6 +12,7 @@
   background-color: #777777;
   border-radius: 10px;
   width: 400px;
+  box-shadow: 5px 5px 5px #999;
 }
 
 .add-todo {
@@ -19,6 +20,7 @@
   justify-content: space-evenly;
   align-items: center;
   width: 60%;
+  padding-bottom: 15px;
 }
 
 .add-todo input {
